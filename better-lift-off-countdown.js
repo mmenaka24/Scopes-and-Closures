@@ -1,3 +1,5 @@
+import { input } from "./utils.js";
+
 function countDown(time, originalTime = time) {
     if (!Number.isInteger(time) || Math.sign(time) === -1) {
         console.error("Time value is not a positive integer");
@@ -15,4 +17,6 @@ function countDown(time, originalTime = time) {
         countDown(time - 1, originalTime);
     }
 }
-countDown(3);
+
+const timeStr = await input("How many seconds until launch? ");
+countDown(Number(timeStr));
